@@ -68,3 +68,23 @@ Vue_Seances_Futures : Liste les séances à venir avec leurs horaires, formats d
 
 Vue_Performance_Films : Il s’agit d’un aperçu des performances des films, incluant les statistiques de ventes, le nombre de billets vendus, et les recettes par film. 
 
+- Le Projectionniste : Il est le responsable technique de la gestion des séances. Il a des droits en lecture sur les informations techniques des séances, telles que les formats de projection, les salles où les films sont projetés, et les horaires. Il n’a pas accès aux données financières, ni aux informations sur les ventes de billets ou les statistiques commerciales.
+  
+Vue_Seances_En_cours : liste les séances en cours en temps réel avec une précision sur la salle et les films diffusés. 
+
+Vue_Seances_Futures : liste des séances programmées pour les jours à venir, avec un focus sur les formats et salles, afin de faciliter la planification du projectionniste.
+
+- Le Client : Les clients ont un accès strictement limité aux données qui les concernent. Ils disposent uniquement de droits en lecture sur les séances à venir, afin de pouvoir réserver des billets. Ils ne peuvent en aucun cas accéder aux données relatives à la base de données elle-même ou aux aspects financiers du cinéma.
+
+Vue_Seances_Futures : Même accès que le projectionniste. Cette vue liste les séances à venir pour lesquelles le client peut acheter un billet, avec les horaires et les formats de projection.
+
+Vue_Tarifs_Billets : On affiche les tarifs des billets en fonction de la séance (lié aux format), de la catégorie du client (enfant, étudiant, adulte) et de la zone du siège dans la salle.
+
+- Le Caissier : Il dispose de droits en lecture sur les informations des séances à venir, la disponibilité des sièges, et les tarifs. Il peut également enregistrer des ventes de billets dans la base de données, mais n’a pas accès aux statistiques commerciales ni aux données techniques.
+  
+Vue_Seances_Disponibles : Affiche les films et séances disponibles pour la vente de billets, avec les horaires et les formats de projection.
+
+Vue_Disponibilite_Sieges : Liste les sièges disponibles pour chaque séance, permettant au caissier de savoir quels sièges peuvent être réservés.
+
+Vue_Tarifs_Billets : Indique les tarifs en fonction du film, de la séance, et de la zone du siège (VIP, Standard, Économique).
+
