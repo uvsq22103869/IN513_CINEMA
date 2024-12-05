@@ -44,3 +44,20 @@ Autres contraintes :
 - Un film ne peut pas être projeté plus de deux fois dans une salle spécifique si cette salle a eu un taux de remplissage inférieur à 50 % lors des deux précédentes projections de ce même film.
 - Lorsqu’une salle est presque pleine (95 % des places réservées) et que la séance se situe en heure de pointe (18h-22h), une salle supplémentaire peut être automatiquement ouverte pour diffuser le même film à une heure proche (+10 à +30 minutes). Cette règle ne s’applique que si le film est populaire (plus de 70 % de taux de remplissage moyen sur les 3 derniers jours).
 
+# DROITS ET VUES 
+
+Nous avons défini les différents utilisateurs de la base de données ainsi que les droits (et vues) auxquels ils ont accès sur cette base de données. Voici les utilisateurs : L’administrateur, le gestionnaire, le caissier, le projectionniste et le client.
+
+Description des droits de chaque utilisateur : 
+
+- L’Administrateur : Il a accès à tout sur la base de données. Il peut créer, modifier et supprimer des tables, des vues, des utilisateurs, ainsi que gérer les droits d’accès des autres utilisateurs.
+Vue_Métadonnées : Liste toutes les contraintes d’intégrité, triggers, et autres règles de gestion de la base.
+Vue_Utilisateurs : Affiche les informations sur les utilisateurs de la base et leurs permissions respectives.
+Vue_Structure_Base : Donne un aperçu de la structure des tables, des index, et des relations entre les entités.
+
+- Le Gestionnaire : Il dispose de droits en lecture et en écriture sur les données liées aux films, séances, billets, et salles. Il n'a pas accès à la gestion technique du système, mais il peut suivre et analyser les performances commerciales du cinéma (ex : recettes, fréquentation). Il peut également ajuster les séances, gérer les programmations et analyser les ventes de billets.
+Vue_Recettes_Films : Affiche les recettes générées par chaque film, avec un suivi global et par séance.
+Vue_Frequentation_Salles : Affiche le taux de fréquentation de chaque salle, en calculant le pourcentage d’occupation moyen.
+Vue_Seances_Futures : Liste les séances à venir avec leurs horaires, formats de projection, et salles associées.
+Vue_Performance_Films : Il s’agit d’un aperçu des performances des films, incluant les statistiques de ventes, le nombre de billets vendus, et les recettes par film. 
+
