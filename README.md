@@ -19,3 +19,4 @@ Pour enrichir les informations liées aux films, la base de données doit stocke
 
 # MODELISATION 
 
+![Screenshot_20241205_115546_Canva](https://github.com/user-attachments/assets/a506e69b-d35e-4c53-8d86-e2b6ca81fe5a)
