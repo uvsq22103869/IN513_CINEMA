@@ -16,3 +16,6 @@ Gestion des Sièges : Identifiant unique du siège, le numéro et la zone où il
 Gestion des Billets : Salle où la séance a lieu, Siège spécifique réservé pour le spectateur, prix du billet ainsi que la catégorie du titulaire du billet (enfant, étudiant, adulte).
 
 Pour enrichir les informations liées aux films, la base de données doit stocker des informations sur les acteurs participant aux films projetés : Nom, prénom, nationalité, âge et un identifiant unique pour bien les distinguer
+
+# MODELISATION 
+
