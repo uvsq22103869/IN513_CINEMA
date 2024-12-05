@@ -20,3 +20,21 @@ Pour enrichir les informations liées aux films, la base de données doit stocke
 # MODELISATION 
 
 ![Screenshot_20241205_115546_Canva](https://github.com/user-attachments/assets/a506e69b-d35e-4c53-8d86-e2b6ca81fe5a)
+
+# LES CONTRAINTES D'INTEGRITE 
+
+Contraintes d'intégrité de Cardinalité :
+Les relations entre les tables doivent respecter des règles spécifiques concernant le nombre d'occurrences. Par exemple, un film peut avoir plusieurs séances, mais chaque séance ne peut être associée qu'à un seul film.
+
+Contrainte d'intégrité de Temps :
+Les réservations de billets ne peuvent pas être faites pour des séances qui ont déjà eu lieu, et les séances ne peuvent pas être programmées en dehors des heures d'ouverture du cinéma (10H-00H30).
+
+Autres contraintes :
+- Le prix des billets varient en fonction du format (3D, IMAX,...) et de la catégorie (tarif enfant, étudiant, normale…)
+- Une salle ne peut projeter deux films en même temps. Il faut un délai de plusieurs minutes entre deux séances se déroulant dans la même salle.
+- Une version peut être diffusé seulement si cette version du film existe.
+- Un format pour un film peut être projeté seulement si ce format existe pour ce film spécifique. 
+- Une séance ne peut pas apparaître « trop tôt » ou « trop tard ». Elle doit être planifié au moins un jour avant et maximum une semaine avant.
+- Impossible de réserver des billets pour des séances passées. Une séance est considérée comme "passée" quelques minutes avant son démarrage (10-15 minutes).
+- Blocage des billets pour une séance si tous les sièges de la salle sont occupés. 
+- Tout film reste au minimum 15 jours à l’affiche (temps d’exploitation). En fonction de son taux de spectateurs (succès commercial), il peut rester beaucoup plus longtemps (le maximum étant de 90 jours), ou au contraire être retiré dès la fin des 15 premiers jours
