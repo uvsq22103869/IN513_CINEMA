@@ -55,3 +55,17 @@ CREATE TABLE SIEGE (
     id_Salle INT NOT NULL,              
     FOREIGN KEY (id_Salle) REFERENCES SALLE(id_Salle) ON DELETE CASCADE
 );
+
+CREATE TABLE SEANCE (
+    id_Seance INT PRIMARY KEY,           
+    Date_Seance DATE NOT NULL,              
+    Heure_Début TIMESTAMP NOT NULL,         
+    Heure_Fin TIMESTAMP NOT NULL,           
+    Version_Film VARCHAR(50) NOT NULL,    
+    id_Salle INT NOT NULL,               
+    id_Film INT NOT NULL,                
+    id_Format INT NOT NULL,              
+    FOREIGN KEY (id_Salle) REFERENCES SALLE(id_Salle) ON DELETE CASCADE,
+    FOREIGN KEY (id_Film) REFERENCES FILM(id_Film) ON DELETE CASCADE,
+    FOREIGN KEY (id_Format) REFERENCES FORMAT(id_Format) ON DELETE CASCADE
+);
