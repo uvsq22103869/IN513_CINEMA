@@ -19,3 +19,19 @@ CREATE TABLE FILM_GENRE (
     FOREIGN KEY (id_Film) REFERENCES FILM(id_Film) ON DELETE CASCADE,
     FOREIGN KEY (id_Genre) REFERENCES GENRE(id_Genre) ON DELETE CASCADE
 );
+
+CREATE TABLE ACTEUR (
+    id_Acteur INT PRIMARY KEY,      
+    Nom VARCHAR(255) NOT NULL,        
+    Prénom VARCHAR(255) NOT NULL,     
+    Nationalité VARCHAR(50),          
+    Age INT                       
+);
+
+CREATE TABLE FILM_ACTEUR (
+    id_Film INT NOT NULL,
+    id_Acteur INT NOT NULL,
+    PRIMARY KEY (id_Film, id_Acteur),
+    FOREIGN KEY (id_Film) REFERENCES FILM(id_Film) ON DELETE CASCADE,
+    FOREIGN KEY (id_Acteur) REFERENCES ACTEUR(id_Acteur) ON DELETE CASCADE
+);
