@@ -35,3 +35,15 @@ CREATE TABLE FILM_ACTEUR (
     FOREIGN KEY (id_Film) REFERENCES FILM(id_Film) ON DELETE CASCADE,
     FOREIGN KEY (id_Acteur) REFERENCES ACTEUR(id_Acteur) ON DELETE CASCADE
 );
+
+CREATE TABLE FORMAT (
+    id_Format INT PRIMARY KEY,      
+    Nom_Format VARCHAR(50) NOT NULL  -- Nom du format (IMAX, 3D, etc.)
+);
+
+CREATE TABLE SALLE (
+    id_Salle NUMBER PRIMARY KEY,          
+    Numero_Salle VARCHAR(50) NOT NULL,   
+    id_Format INT NOT NULL,
+    FOREIGN KEY (id_Format) REFERENCES FORMAT(id_Format) ON DELETE CASCADE
+);
