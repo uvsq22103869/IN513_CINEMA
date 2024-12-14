@@ -69,3 +69,13 @@ CREATE TABLE SEANCE (
     FOREIGN KEY (id_Film) REFERENCES FILM(id_Film) ON DELETE CASCADE,
     FOREIGN KEY (id_Format) REFERENCES FORMAT(id_Format) ON DELETE CASCADE
 );
+
+CREATE TABLE BILLET (
+    id_Billet INT PRIMARY KEY,           
+    Prix DECIMAL(8, 2) NOT NULL,           
+    Catégorie VARCHAR(50) NOT NULL,       
+    id_Seance INT NOT NULL,              
+    id_Siege INT NOT NULL,               
+    FOREIGN KEY (id_Seance) REFERENCES SEANCE(id_Seance) ON DELETE CASCADE,
+    FOREIGN KEY (id_Siege) REFERENCES SIEGE(id_Siege) ON DELETE CASCADE
+);
