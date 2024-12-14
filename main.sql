@@ -47,3 +47,11 @@ CREATE TABLE SALLE (
     id_Format INT NOT NULL,
     FOREIGN KEY (id_Format) REFERENCES FORMAT(id_Format) ON DELETE CASCADE
 );
+
+CREATE TABLE SIEGE (
+    id_Siege INT PRIMARY KEY,          
+    numero_Siege VARCHAR(10) NOT NULL, -- Numéro unique du siège dans la salle
+    Zone VARCHAR(50) NOT NULL,         -- Zone (VIP, standard, etc.)
+    id_Salle INT NOT NULL,              
+    FOREIGN KEY (id_Salle) REFERENCES SALLE(id_Salle) ON DELETE CASCADE
+);
