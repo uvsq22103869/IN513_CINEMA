@@ -79,3 +79,12 @@ CREATE TABLE BILLET (
     FOREIGN KEY (id_Seance) REFERENCES SEANCE(id_Seance) ON DELETE CASCADE,
     FOREIGN KEY (id_Siege) REFERENCES SIEGE(id_Siege) ON DELETE CASCADE
 );
+
+-- INSERTION POUR LA TABLE FORMAT 
+INSERT INTO FORMAT (id_Format, Nom_Format) VALUES(1, 'Classique');
+INSERT INTO FORMAT (id_Format, Nom_Format) VALUES(2, 'IMAX'); 
+INSERT INTO FORMAT (id_Format, Nom_Format) VALUES(3, 'Dolby Atmos'); 
+INSERT INTO FORMAT (id_Format, Nom_Format) VALUES(4, '3D');
+INSERT INTO FORMAT (id_Format, Nom_Format) VALUES(5, '4DX');
+
+
