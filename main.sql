@@ -87,4 +87,14 @@ INSERT INTO FORMAT (id_Format, Nom_Format) VALUES(3, 'Dolby Atmos');
 INSERT INTO FORMAT (id_Format, Nom_Format) VALUES(4, '3D');
 INSERT INTO FORMAT (id_Format, Nom_Format) VALUES(5, '4DX');
 
-
+-- INSERTION DES 10 SALLES DU CINEMA
+INSERT INTO SALLE (id_Salle, Numero_Salle, id_Format) VALUES (101, 'Salle 1', 1); 
+INSERT INTO SALLE (id_Salle, Numero_Salle, id_Format) VALUES (102, 'Salle 2', 4);
+INSERT INTO SALLE (id_Salle, Numero_Salle, id_Format) VALUES (103, 'Salle 3', 1); 
+INSERT INTO SALLE (id_Salle, Numero_Salle, id_Format) VALUES (104, 'Salle IMAX', 2); 
+INSERT INTO SALLE (id_Salle, Numero_Salle, id_Format) VALUES (105, 'Salle 5', 3); 
+INSERT INTO SALLE (id_Salle, Numero_Salle, id_Format) VALUES (106, 'Salle 6', 3); 
+INSERT INTO SALLE (id_Salle, Numero_Salle, id_Format) VALUES (107, 'Salle 4DX', 5);
+INSERT INTO SALLE (id_Salle, Numero_Salle, id_Format) VALUES (108, 'Salle 8', 1); 
+INSERT INTO SALLE (id_Salle, Numero_Salle, id_Format) VALUES (109, 'Salle 9', 1); 
+INSERT INTO SALLE (id_Salle, Numero_Salle, id_Format) VALUES (110, 'Salle 10', 4);
