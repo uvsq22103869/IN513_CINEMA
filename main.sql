@@ -102,6 +102,28 @@ INSERT INTO SALLE (id_Salle, Numero_Salle, id_Format) VALUES (110, 'Salle 10', 4
 ALTER SESSION SET NLS_DATE_FORMAT = 'DD-MM-YYYY';
 
 -- INSERTION DES FILMS 
+INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitation) VALUES (845781, 'Red One', '12-12-2024', 124, '-12 ans', 15);
+INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitation) VALUES (912649, 'Venom : The Last Dance', '30-10-2024', 109, '-12 ans', 15);
+INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitation) VALUES (1241982, 'Vaiana 2', '27-11-2024', 100, 'Tout public', 15);
+INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitation) VALUES (1035048, 'Elevation', '07-11-2024', 91, '-12 ans', 15);
+INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitation) VALUES (974453, 'Absolution', '31-10-2024', 122, '-12 ans', 15);
+INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitation) VALUES (762509, 'Mufasa : Le Roi Lion', '18-12-2024', 118, 'Tout public', 15);
+INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitation) VALUES (1138194, 'Heretic', '27-11-2024', 110, 'Tout public', 15);
+INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitation) VALUES (1184918, 'Le Robot sauvage', '09-10-2024', 102, '-12 ans', 15);
+INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitation) VALUES (939243, 'Sonic 3, le film', '25-12-2024', 100, 'Tout public', 15);
+INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitation) VALUES (539972, 'Kraven the Hunter', '18-12-2024', 127, '-12 ans', 15);
+INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitation) VALUES (1182387, 'Armor', '30-10-2024', 89, '-12 ans', 15);
+INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitation) VALUES (1167271, 'Week-end à Taipei', '25-09-2024', 98, '-12 ans', 15);
+INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitation) VALUES (558449, 'Gladiator II', '13-11-2024', 148, '-12 ans', 15);
+INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitation) VALUES (645757, 'Ce Noël-là', '04-12-2024', 95, 'Tout public', 15);
+INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitation) VALUES (1299652, 'Watchmen: Chapter II', '25-11-2024', 86, '-12 ans', 15);
+INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitation) VALUES (1147416, 'Miraculous World : Londres, la course contre le temps', '05-10-2024', 50, '-12 ans', 15);
+INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitation) VALUES (933260, 'The Substance', '06-11-2024', 141, 'Tout public', 15);
+INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitation) VALUES (1000075, 'Largo Winch : Le prix de l''argent', '31-07-2024', 100, '-12 ans', 15);
+INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitation) VALUES (533535, 'Deadpool & Wolverine', '24-07-2024', 128, '-12 ans', 15);
+INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitation) VALUES (1034541, 'Terrifier 3', '09-10-2024', 125, 'Tout public', 15);
+INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitation) VALUES (402431, 'Wicked', '04-12-2024', 160, 'Tout public', 15);
+INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitation) VALUES (1100782, 'Smile 2', '16-10-2024', 127, 'Tout public', 15);
 INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitation) VALUES (1118031, 'Apocalypse Z : le début de la fin', '04-10-2024', 119, '-12 ans', 15);
 INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitation) VALUES (1022789, 'Vice-versa 2', '19-06-2024', 97, 'Tout public', 15);
 INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitation) VALUES (945961, 'Alien : Romulus', '14-08-2024', 119, 'Tout public', 15);
@@ -180,3 +202,26 @@ INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitat
 INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitation) VALUES (929590, 'Civil War', '17-04-2024', 109, '-12 ans', 15);
 INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitation) VALUES (1104844, 'BLUE LOCK LE FILM -ÉPISODE NAGI-', '03-07-2024', 91, '-12 ans', 15);
 INSERT INTO FILM (id_Film, Titre, Date_sortie, Durée, Audience, Temps_exploitation) VALUES (1079091, 'Jamais plus - It Ends with Us', '14-08-2024', 131, 'Tout public', 15);
+
+-- INSERION DES GENRES
+INSERT INTO GENRE (id_Genre, Genre) VALUES (28, 'Action');
+INSERT INTO GENRE (id_Genre, Genre) VALUES (12, 'Aventure');
+INSERT INTO GENRE (id_Genre, Genre) VALUES (16, 'Animation');
+INSERT INTO GENRE (id_Genre, Genre) VALUES (35, 'Comédie');
+INSERT INTO GENRE (id_Genre, Genre) VALUES (80, 'Crime');
+INSERT INTO GENRE (id_Genre, Genre) VALUES (99, 'Documentaire');
+INSERT INTO GENRE (id_Genre, Genre) VALUES (18, 'Drame');
+INSERT INTO GENRE (id_Genre, Genre) VALUES (10751, 'Familial');
+INSERT INTO GENRE (id_Genre, Genre) VALUES (14, 'Fantastique');
+INSERT INTO GENRE (id_Genre, Genre) VALUES (36, 'Histoire');
+INSERT INTO GENRE (id_Genre, Genre) VALUES (27, 'Horreur');
+INSERT INTO GENRE (id_Genre, Genre) VALUES (10402, 'Musique');
+INSERT INTO GENRE (id_Genre, Genre) VALUES (9648, 'Mystère');
+INSERT INTO GENRE (id_Genre, Genre) VALUES (10749, 'Romance');
+INSERT INTO GENRE (id_Genre, Genre) VALUES (878, 'Science-Fiction');
+INSERT INTO GENRE (id_Genre, Genre) VALUES (10770, 'Téléfilm');
+INSERT INTO GENRE (id_Genre, Genre) VALUES (53, 'Thriller');
+INSERT INTO GENRE (id_Genre, Genre) VALUES (10752, 'Guerre');
+INSERT INTO GENRE (id_Genre, Genre) VALUES (37, 'Western');
+
+
