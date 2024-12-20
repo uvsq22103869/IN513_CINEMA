@@ -1,5 +1,24 @@
 -- Listes des vues à tester 
 
+-------------------------------------------------------- VUE DU PROJECTIONNISTE -------------------------------------------------
+
+CREATE OR REPLACE VIEW Vue_Seances_En_Cours AS
+SELECT 
+    s.id_Seance,
+    f.Titre AS Film,
+    sa.numero_Salle AS Salle,
+    fm.Nom_Format AS Format,
+    s.Date_Seance,
+    s.Heure_Début,
+    s.Heure_Fin
+FROM SEANCE s
+JOIN FILM f ON s.id_Film = f.id_Film
+JOIN SALLE sa ON s.id_Salle = sa.id_Salle
+JOIN FORMAT fm ON s.id_Format = fm.id_Format
+WHERE s.Date_Seance = TRUNC(SYSDATE) 
+    AND SYSDATE BETWEEN s.Heure_Début AND s.Heure_Fin 
+ORDER BY s.Heure_Début;
+
 -------------------------------------------------------- VUE DU CLIENT ----------------------------------------------------------
 CREATE OR REPLACE VIEW Vue_Seances_Futures AS
 SELECT 
