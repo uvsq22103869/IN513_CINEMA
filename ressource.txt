@@ -91,5 +91,4 @@ films = [{'id': 693134, 'title': 'Dune : Deuxième partie', 'Date_sortie': '28-0
 {'id': 939243, 'title': 'Sonic 3, le film', 'Date_sortie': '25-12-2024', 'Durée': '100'}
 {'id': 1156593, 'title': 'À contre-sens 2', 'Date_sortie': '27-12-2024', 'Durée': '0'}
 {'id': 1038263, 'title': 'Maria', 'Date_sortie': '05-02-2025', 'Durée': '123'}
-{'id': 1038263, 'title': 'Maria', 'Date_sortie': '05-02-2025', 'Durée': '123'}
 {'id': 1232449, 'title': 'Young Hearts', 'Date_sortie': '19-02-2025', 'Durée': '97'}]
