@@ -13,7 +13,7 @@ DECLARE
 BEGIN
     IF :NEW.Catégorie = 'Enfant' THEN
         coefficient_categorie := 0.5;
-    ELSIF :NEW.Catégorie = 'Étudiant' THEN
+    ELSIF :NEW.Catégorie = 'Etudiant' THEN
         coefficient_categorie := 0.8;
     ELSIF :NEW.Catégorie = 'Adulte' THEN
         coefficient_categorie := 1.0;
