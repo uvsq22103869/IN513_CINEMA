@@ -1,5 +1,38 @@
 -- Listes des vues à tester 
 
+------------------------------------------------------- VUE ADMINISTRATEUR --------------------------------------------------------
+CREATE OR REPLACE VIEW Vue_Métadonnées AS
+SELECT 
+    c.CONSTRAINT_NAME AS Nom_Contrainte,
+    c.CONSTRAINT_TYPE AS Type_Contrainte,
+    c.TABLE_NAME AS Table_Associée,
+    c.STATUS AS Statut_Contrainte,
+    t.TRIGGER_NAME AS Nom_Trigger,
+    t.STATUS AS Statut_Trigger,
+    t.TABLE_NAME AS Table_Trigger
+FROM USER_CONSTRAINTS c
+LEFT JOIN USER_TRIGGERS t ON c.TABLE_NAME = t.TABLE_NAME
+ORDER BY c.TABLE_NAME, c.CONSTRAINT_NAME, t.TRIGGER_NAME;
+
+
+CREATE OR REPLACE VIEW Vue_Structure_Base AS
+SELECT 
+    t.TABLE_NAME AS Nom_Table,
+    c.COLUMN_NAME AS Nom_Colonne,
+    c.DATA_TYPE AS Type_Donnée,
+    c.NULLABLE AS Accepte_Null,
+    c.DATA_LENGTH AS Taille,
+    i.INDEX_NAME AS Nom_Index,
+    i.UNIQUENESS AS Contrainte_Unique
+FROM 
+    USER_TABLES t
+LEFT JOIN 
+    USER_TAB_COLUMNS c ON t.TABLE_NAME = c.TABLE_NAME
+LEFT JOIN 
+    USER_INDEXES i ON t.TABLE_NAME = i.TABLE_NAME
+ORDER BY 
+    t.TABLE_NAME, c.COLUMN_ID;
+
 -------------------------------------------------------- VUE DU GESTIONNAIRE ----------------------------------------------------
 CREATE OR REPLACE VIEW Vue_Recettes_Films AS
 SELECT 
