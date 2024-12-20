@@ -1,97 +1,95 @@
 // Liste des films sous forme de liste de dictionnaire 
-films = [ 
-    {'id': 845781, 'title': 'Red One'}, 
-    {'id': 912649, 'title': 'Venom : The Last Dance'}, 
-    {'id': 1241982, 'title': 'Vaiana 2'}, 
-    {'id': 1035048, 'title': 'Elevation'}, 
-    {'id': 974453, 'title': 'Absolution'}, 
-    {'id': 762509, 'title': 'Mufasa : Le Roi Lion'}, 
-    {'id': 1138194, 'title': 'Heretic'}, 
-    {'id': 1184918, 'title': 'Le Robot sauvage'}, 
-    {'id': 939243, 'title': 'Sonic 3, le film'}, 
-    {'id': 539972, 'title': 'Kraven the Hunter'}, 
-    {'id': 1182387, 'title': 'Armor'}, 
-    {'id': 1167271, 'title': 'Week-end à Taipei'}, 
-    {'id': 558449, 'title': 'Gladiator II'}, 
-    {'id': 645757, 'title': 'Ce Noël-là'}, 
-    {'id': 1299652, 'title': 'Watchmen: Chapter II'}, 
-    {'id': 1147416, 'title': 'Miraculous World : Londres, la course contre le temps'}, 
-    {'id': 933260, 'title': 'The Substance'}, 
-    {'id': 533535, 'title': 'Deadpool & Wolverine'}, 
-    {'id': 1034541, 'title': 'Terrifier 3'}, 
-    {'id': 402431, 'title': 'Wicked'}, 
-    {'id': 1100782, 'title': 'Smile 2'}, 
-    {'id': 1118031, 'title': 'Apocalypse Z : le début de la fin'}, 
-    {'id': 1022789, 'title': 'Vice-versa 2'}, 
-    {'id': 945961, 'title': 'Alien : Romulus'}, 
-    {'id': 698687, 'title': 'Transformers : Le Commencement'}, 
-    {'id': 957119, 'title': 'Sidelined: The QB and Me'}, 
-    {'id': 519182, 'title': 'Moi, moche et méchant 4'}, 
-    {'id': 1005331, 'title': 'Carry-On'}, 
-    {'id': 791042, 'title': 'Levels'}, 
-    {'id': 1252470, 'title': 'La Destinée de Sikandar'}, 
-    {'id': 1171640, 'title': 'GTMAX'}, 
-    {'id': 995803, 'title': 'Arena Wars'}, 
-    {'id': 1155095, 'title': 'The Moor'}, 
-    {'id': 1357633, 'title': 'Solo Leveling -ReAwakening-'}, 
-    {'id': 1154223, 'title': 'Tigres et Hyènes'}, 
-    {'id': 1124641, 'title': 'Classified'}, 
-    {'id': 1196470, 'title': 'Survivre'}, 
-    {'id': 592983, 'title': 'Ellian et le sortilège'}, 
-    {'id': 1051896, 'title': 'Arcadian'}, 
-    {'id': 573435, 'title': 'Bad Boys: Ride or Die'}, 
-    {'id': 1029235, 'title': 'Azrael'}, 
-    {'id': 1165466, 'title': 'Wake Up'}, 
-    {'id': 1252309, 'title': 'Pídeme lo que quieras'}, 
-    {'id': 1326059, 'title': 'Pimpinero : De Pétrole et de Sang'}, 
-    {'id': 1084736, 'title': 'Le Comte de Monte-Cristo'}, 
-    {'id': 1097870, 'title': 'Dear Santa'}, 
-    {'id': 1156593, 'title': 'À contre-sens 2'}, 
-    {'id': 1296753, 'title': 'Remnant'}, 
-    {'id': 839033, 'title': 'Le Seigneur des Anneaux : La Guerre des Rohirrim'}, 
-    {'id': 1100856, 'title': 'Заклятье. Шепот ведьм'}, 
-    {'id': 889737, 'title': 'Joker : Folie à deux'}, 
-    {'id': 693134, 'title': 'Dune : Deuxième partie'}, 
-    {'id': 1038263, 'title': 'Maria'}, 
-    {'id': 1064028, 'title': 'Subservience'}, 
-    {'id': 1287717, 'title': 'Do Not Enter'}, 
-    {'id': 748783, 'title': 'Garfield : Héros malgré lui'}, 
-    {'id': 1389147, 'title': 'SDI: Secret Department of Intervention'}, 
-    {'id': 972614, 'title': 'Knox Goes Away'}, 
-    {'id': 1014505, 'title': 'Overlord : The Sacred Kingdom'}, 
-    {'id': 1125510, 'title': 'La Plateforme 2'}, 
-    {'id': 1116490, 'title': 'Cash Out'}, 
-    {'id': 1011985, 'title': 'Kung Fu Panda 4'}, 
-    {'id': 978796, 'title': 'Bagman'}, 
-    {'id': 1043905, 'title': 'Dirty Angels'}, 
-    {'id': 823464, 'title': 'Godzilla x Kong : Le Nouvel Empire'}, 
-    {'id': 1243381, 'title': 'Marie'}, 
-    {'id': 1038263, 'title': 'Maria'}, 
-    {'id': 1371727, 'title': 'Tous en scène : Thriller'}, 
-    {'id': 1064213, 'title': 'Anora'}, 
-    {'id': 957452, 'title': 'The Crow'}, 
-    {'id': 653346, 'title': 'La Planète des singes : Le Nouveau Royaume'}, 
-    {'id': 1208808, 'title': 'Turno nocturno'}, 
-    {'id': 726139, 'title': 'Project Silence'}, 
-    {'id': 639720, 'title': 'Blue & Compagnie'}, 
-    {'id': 1232449, 'title': 'Young Hearts'}, 
-    {'id': 762441, 'title': 'Sans un bruit : Jour 1'}, 
-    {'id': 1106739, 'title': 'Juré n°2'}, 
-    {'id': 1340602, 'title': 'Las tías'}, 
-    {'id': 1159311, 'title': 'My Hero Academia: You’re Next'}, 
-    {'id': 1354627, 'title': 'Kamp Frayeur'}, 
-    {'id': 976734, 'title': 'Canary Black'}, 
-    {'id': 1191611, 'title': 'En colo avec ma mère'}, 
-    {'id': 786892, 'title': 'Furiosa : Une saga Mad Max'}, 
-    {'id': 718821, 'title': 'Twisters'}, 
-    {'id': 917496, 'title': 'Beetlejuice Beetlejuice'}, 
-    {'id': 857598, 'title': 'Pushpa: The Rule - Part 2'}, 
-    {'id': 1355755, 'title': 'Un conte de Noël, ou presque'}, 
-    {'id': 1203236, 'title': 'Nutcrackers'}, 
-    {'id': 1154215, 'title': 'Elyas'}, 
-    {'id': 974576, 'title': 'Conclave'}, 
-    {'id': 616446, 'title': 'Brothers'}, 
-    {'id': 929590, 'title': 'Civil War'}, 
-    {'id': 1104844, 'title': 'BLUE LOCK LE FILM -ÉPISODE NAGI-'}, 
-    {'id': 1079091, 'title': 'Jamais plus - It Ends with Us'}
-]
+films = [{'id': 693134, 'title': 'Dune : Deuxième partie', 'Date_sortie': '28-02-2024', 'Durée': '165'}
+{'id': 1011985, 'title': 'Kung Fu Panda 4', 'Date_sortie': '27-03-2024', 'Durée': '94'}
+{'id': 823464, 'title': 'Godzilla x Kong : Le Nouvel Empire', 'Date_sortie': '03-04-2024', 'Durée': '115'}
+{'id': 1051896, 'title': 'Arcadian', 'Date_sortie': '12-04-2024', 'Durée': '92'}
+{'id': 929590, 'title': 'Civil War', 'Date_sortie': '17-04-2024', 'Durée': '109'}
+{'id': 1165466, 'title': 'Wake Up', 'Date_sortie': '08-05-2024', 'Durée': '81'}
+{'id': 653346, 'title': 'La Planète des singes : Le Nouveau Royaume', 'Date_sortie': '08-05-2024', 'Durée': '145'}
+{'id': 639720, 'title': 'Blue & Compagnie', 'Date_sortie': '08-05-2024', 'Durée': '104'}
+{'id': 1287717, 'title': 'Do Not Enter', 'Date_sortie': '15-05-2024', 'Durée': '80'}
+{'id': 786892, 'title': 'Furiosa : Une saga Mad Max', 'Date_sortie': '22-05-2024', 'Durée': '149'}
+{'id': 573435, 'title': 'Bad Boys: Ride or Die', 'Date_sortie': '05-06-2024', 'Durée': '115'}
+{'id': 1100856, 'title': 'Заклятье. Шепот ведьм', 'Date_sortie': '13-06-2024', 'Durée': '90'}
+{'id': 1155095, 'title': 'The Moor', 'Date_sortie': '14-06-2024', 'Durée': '120'}
+{'id': 1022789, 'title': 'Vice-versa 2', 'Date_sortie': '19-06-2024', 'Durée': '97'}
+{'id': 1196470, 'title': 'Survivre', 'Date_sortie': '19-06-2024', 'Durée': '90'}
+{'id': 995803, 'title': 'Arena Wars', 'Date_sortie': '25-06-2024', 'Durée': '96'}
+{'id': 762441, 'title': 'Sans un bruit : Jour 1', 'Date_sortie': '26-06-2024', 'Durée': '99'}
+{'id': 1084736, 'title': 'Le Comte de Monte-Cristo', 'Date_sortie': '28-06-2024', 'Durée': '178'}
+{'id': 1296753, 'title': 'Remnant', 'Date_sortie': '30-06-2024', 'Durée': '112'}
+{'id': 1154215, 'title': 'Elyas', 'Date_sortie': '03-07-2024', 'Durée': '99'}
+{'id': 1104844, 'title': 'BLUE LOCK LE FILM -ÉPISODE NAGI-', 'Date_sortie': '03-07-2024', 'Durée': '91'}
+{'id': 519182, 'title': 'Moi, moche et méchant 4', 'Date_sortie': '10-07-2024', 'Durée': '95'}
+{'id': 718821, 'title': 'Twisters', 'Date_sortie': '17-07-2024', 'Durée': '123'}
+{'id': 533535, 'title': 'Deadpool & Wolverine', 'Date_sortie': '24-07-2024', 'Durée': '128'}
+{'id': 748783, 'title': 'Garfield : Héros malgré lui', 'Date_sortie': '31-07-2024', 'Durée': '101'}
+{'id': 972614, 'title': 'Knox Goes Away', 'Date_sortie': '09-08-2024', 'Durée': '114'}
+{'id': 945961, 'title': 'Alien : Romulus', 'Date_sortie': '14-08-2024', 'Durée': '119'}
+{'id': 1079091, 'title': 'Jamais plus - It Ends with Us', 'Date_sortie': '14-08-2024', 'Durée': '131'}
+{'id': 1064028, 'title': 'Subservience', 'Date_sortie': '15-08-2024', 'Durée': '105'}
+{'id': 957452, 'title': 'The Crow', 'Date_sortie': '21-08-2024', 'Durée': '111'}
+{'id': 726139, 'title': 'Project Silence', 'Date_sortie': '21-08-2024', 'Durée': '101'}
+{'id': 1340602, 'title': 'Las tías', 'Date_sortie': '28-08-2024', 'Durée': '87'}
+{'id': 1116490, 'title': 'Cash Out', 'Date_sortie': '10-09-2024', 'Durée': '90'}
+{'id': 917496, 'title': 'Beetlejuice Beetlejuice', 'Date_sortie': '11-09-2024', 'Durée': '105'}
+{'id': 1014505, 'title': 'Overlord : The Sacred Kingdom', 'Date_sortie': '20-09-2024', 'Durée': '134'}
+{'id': 978796, 'title': 'Bagman', 'Date_sortie': '20-09-2024', 'Durée': '92'}
+{'id': 1167271, 'title': 'Week-end à Taipei', 'Date_sortie': '25-09-2024', 'Durée': '98'}
+{'id': 1029235, 'title': 'Azrael', 'Date_sortie': '27-09-2024', 'Durée': '85'}
+{'id': 889737, 'title': 'Joker : Folie à deux', 'Date_sortie': '02-10-2024', 'Durée': '138'}
+{'id': 1118031, 'title': 'Apocalypse Z : le début de la fin', 'Date_sortie': '04-10-2024', 'Durée': '119'}
+{'id': 1125510, 'title': 'La Plateforme 2', 'Date_sortie': '04-10-2024', 'Durée': '100'}
+{'id': 1147416, 'title': 'Miraculous World : Londres, la course contre le temps', 'Date_sortie': '05-10-2024', 'Durée': '50'}
+{'id': 1184918, 'title': 'Le Robot sauvage', 'Date_sortie': '09-10-2024', 'Durée': '102'}
+{'id': 1034541, 'title': 'Terrifier 3', 'Date_sortie': '09-10-2024', 'Durée': '125'}
+{'id': 1159311, 'title': 'My Hero Academia: You’re Next', 'Date_sortie': '09-10-2024', 'Durée': '110'}
+{'id': 1326059, 'title': 'Pimpinero : De Pétrole et de Sang', 'Date_sortie': '10-10-2024', 'Durée': '122'}
+{'id': 1354627, 'title': 'Kamp Frayeur', 'Date_sortie': '10-10-2024', 'Durée': '45'}
+{'id': 1100782, 'title': 'Smile 2', 'Date_sortie': '16-10-2024', 'Durée': '127'}
+{'id': 1371727, 'title': 'Tous en scène : Thriller', 'Date_sortie': '16-10-2024', 'Durée': '11'}
+{'id': 616446, 'title': 'Brothers', 'Date_sortie': '17-10-2024', 'Durée': '88'}
+{'id': 1124641, 'title': 'Classified', 'Date_sortie': '22-10-2024', 'Durée': '105'}
+{'id': 698687, 'title': 'Transformers : Le Commencement', 'Date_sortie': '23-10-2024', 'Durée': '104'}
+{'id': 976734, 'title': 'Canary Black', 'Date_sortie': '24-10-2024', 'Durée': '103'}
+{'id': 912649, 'title': 'Venom : The Last Dance', 'Date_sortie': '30-10-2024', 'Durée': '109'}
+{'id': 1182387, 'title': 'Armor', 'Date_sortie': '30-10-2024', 'Durée': '89'}
+{'id': 1064213, 'title': 'Anora', 'Date_sortie': '30-10-2024', 'Durée': '139'}
+{'id': 1106739, 'title': 'Juré n°2', 'Date_sortie': '30-10-2024', 'Durée': '114'}
+{'id': 974453, 'title': 'Absolution', 'Date_sortie': '31-10-2024', 'Durée': '122'}
+{'id': 1208808, 'title': 'Turno nocturno', 'Date_sortie': '31-10-2024', 'Durée': '107'}
+{'id': 791042, 'title': 'Levels', 'Date_sortie': '01-11-2024', 'Durée': '92'}
+{'id': 933260, 'title': 'The Substance', 'Date_sortie': '06-11-2024', 'Durée': '141'}
+{'id': 1035048, 'title': 'Elevation', 'Date_sortie': '07-11-2024', 'Durée': '91'}
+{'id': 558449, 'title': 'Gladiator II', 'Date_sortie': '13-11-2024', 'Durée': '148'}
+{'id': 1355755, 'title': 'Un conte de Noël, ou presque', 'Date_sortie': '15-11-2024', 'Durée': '24'}
+{'id': 1171640, 'title': 'GTMAX', 'Date_sortie': '20-11-2024', 'Durée': '98'}
+{'id': 1154223, 'title': 'Tigres et Hyènes', 'Date_sortie': '22-11-2024', 'Durée': '109'}
+{'id': 592983, 'title': 'Ellian et le sortilège', 'Date_sortie': '22-11-2024', 'Durée': '110'}
+{'id': 1097870, 'title': 'Dear Santa', 'Date_sortie': '24-11-2024', 'Durée': '108'}
+{'id': 1299652, 'title': 'Watchmen: Chapter II', 'Date_sortie': '25-11-2024', 'Durée': '86'}
+{'id': 1241982, 'title': 'Vaiana 2', 'Date_sortie': '27-11-2024', 'Durée': '100'}
+{'id': 1138194, 'title': 'Heretic', 'Date_sortie': '27-11-2024', 'Durée': '110'}
+{'id': 1389147, 'title': 'SDI: Secret Department of Intervention', 'Date_sortie': '28-11-2024', 'Durée': '120'}
+{'id': 957119, 'title': 'Sidelined: The QB and Me', 'Date_sortie': '29-11-2024', 'Durée': '99'}
+{'id': 1252470, 'title': 'La Destinée de Sikandar', 'Date_sortie': '29-11-2024', 'Durée': '143'}
+{'id': 1252309, 'title': 'Pídeme lo que quieras', 'Date_sortie': '29-11-2024', 'Durée': '0'}
+{'id': 1203236, 'title': 'Nutcrackers', 'Date_sortie': '29-11-2024', 'Durée': '105'}
+{'id': 645757, 'title': 'Ce Noël-là', 'Date_sortie': '04-12-2024', 'Durée': '95'}
+{'id': 402431, 'title': 'Wicked', 'Date_sortie': '04-12-2024', 'Durée': '160'}
+{'id': 974576, 'title': 'Conclave', 'Date_sortie': '04-12-2024', 'Durée': '120'}
+{'id': 857598, 'title': 'Pushpa: The Rule - Part 2', 'Date_sortie': '05-12-2024', 'Durée': '198'}
+{'id': 1243381, 'title': 'Marie', 'Date_sortie': '06-12-2024', 'Durée': '110'}
+{'id': 1191611, 'title': 'En colo avec ma mère', 'Date_sortie': '06-12-2024', 'Durée': '95'}
+{'id': 1357633, 'title': 'Solo Leveling -ReAwakening-', 'Date_sortie': '07-12-2024', 'Durée': '116'}
+{'id': 839033, 'title': 'Le Seigneur des Anneaux : La Guerre des Rohirrim', 'Date_sortie': '11-12-2024', 'Durée': '134'}
+{'id': 845781, 'title': 'Red One', 'Date_sortie': '12-12-2024', 'Durée': '124'}
+{'id': 1005331, 'title': 'Carry-On', 'Date_sortie': '13-12-2024', 'Durée': '119'}
+{'id': 1043905, 'title': 'Dirty Angels', 'Date_sortie': '13-12-2024', 'Durée': '104'}
+{'id': 762509, 'title': 'Mufasa : Le Roi Lion', 'Date_sortie': '18-12-2024', 'Durée': '118'}
+{'id': 539972, 'title': 'Kraven the Hunter', 'Date_sortie': '18-12-2024', 'Durée': '127'}
+{'id': 939243, 'title': 'Sonic 3, le film', 'Date_sortie': '25-12-2024', 'Durée': '100'}
+{'id': 1156593, 'title': 'À contre-sens 2', 'Date_sortie': '27-12-2024', 'Durée': '0'}
+{'id': 1038263, 'title': 'Maria', 'Date_sortie': '05-02-2025', 'Durée': '123'}
+{'id': 1038263, 'title': 'Maria', 'Date_sortie': '05-02-2025', 'Durée': '123'}
+{'id': 1232449, 'title': 'Young Hearts', 'Date_sortie': '19-02-2025', 'Durée': '97'}]
