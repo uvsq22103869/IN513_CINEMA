@@ -20,6 +20,7 @@ LEFT JOIN BILLET b ON s.id_Seance = b.id_Seance
 GROUP BY f.id_Film, f.Titre, s.id_Seance, s.Date_Seance, s.Heure_Début
 ORDER BY f.Titre, s.Date_Seance, s.Heure_Début;
 
+
 CREATE OR REPLACE VIEW Vue_Frequentation_Salles AS
 SELECT 
     sa.id_Salle,
@@ -32,6 +33,35 @@ FROM SALLE sa
 LEFT JOIN SEANCE s ON sa.id_Salle = s.id_Salle
 LEFT JOIN BILLET b ON s.id_Seance = b.id_Seance
 GROUP BY sa.id_Salle, sa.numero_Salle;
+
+
+CREATE OR REPLACE VIEW Vue_Frequentation_Salles AS
+SELECT 
+    sa.id_Salle,
+    sa.numero_Salle,
+    COUNT(b.id_Billet) AS Total_Billets,
+    (SELECT COUNT(*) FROM SIEGE sg WHERE sg.id_Salle = sa.id_Salle) AS Capacite,
+    ROUND((COUNT(b.id_Billet) * 100.0) / 
+          (SELECT COUNT(*) FROM SIEGE sg WHERE sg.id_Salle = sa.id_Salle), 2) AS Taux_Frequentation
+FROM SALLE sa
+LEFT JOIN SEANCE s ON sa.id_Salle = s.id_Salle
+LEFT JOIN BILLET b ON s.id_Seance = b.id_Seance
+GROUP BY sa.id_Salle, sa.numero_Salle;
+
+
+CREATE OR REPLACE VIEW Vue_Performance_Films AS
+SELECT 
+    f.id_Film,
+    f.Titre AS Film,
+    COUNT(b.id_Billet) AS Total_Billets_Vendus,
+    SUM(b.Prix) AS Total_Recettes,
+    ROUND(AVG(b.Prix), 2) AS Prix_Moyen
+FROM FILM f
+LEFT JOIN SEANCE s ON f.id_Film = s.id_Film
+LEFT JOIN BILLET b ON s.id_Seance = b.id_Seance
+GROUP BY f.id_Film, f.Titre
+ORDER BY Total_Recettes DESC;
+
 
 -------------------------------------------------------- VUE DU PROJECTIONNISTE -------------------------------------------------
 
@@ -68,8 +98,6 @@ JOIN SALLE sa ON s.id_Salle = sa.id_Salle
 JOIN FORMAT fm ON s.id_Format = fm.id_Format
 WHERE s.Date_Seance > TRUNC(SYSDATE) 
 ORDER BY s.Date_Seance, s.Heure_Début;
-
-
 
 -------------------------------------------------------- VUE DU CAISSIER --------------------------------------------------------
 -- Vue des séances disponibles
