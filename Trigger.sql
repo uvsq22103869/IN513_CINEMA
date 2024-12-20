@@ -87,3 +87,78 @@ BEGIN
 END;
 /
 
+
+CREATE OR REPLACE TRIGGER trg_verifier_limite_genre_prime_time
+BEFORE INSERT OR UPDATE ON SEANCE
+FOR EACH ROW
+DECLARE
+    total_seances_prime INT;
+    seances_genre_prime INT;
+    proportion_genre NUMBER(5, 2);
+    genre_film VARCHAR(50);
+BEGIN
+    SELECT GENRE.Genre
+    INTO genre_film
+    FROM FILM_GENRE
+    JOIN GENRE ON FILM_GENRE.id_Genre = GENRE.id_Genre
+    WHERE FILM_GENRE.id_Film = :NEW.id_Film;
+
+    SELECT COUNT(*)
+    INTO total_seances_prime
+    FROM SEANCE
+    WHERE Date_Seance = :NEW.Date_Seance
+      AND EXTRACT(HOUR FROM Heure_Début) BETWEEN 18 AND 21;
+
+    SELECT COUNT(*)
+    INTO seances_genre_prime
+    FROM SEANCE
+    JOIN FILM_GENRE ON SEANCE.id_Film = FILM_GENRE.id_Film
+    WHERE FILM_GENRE.id_Genre = (
+        SELECT id_Genre
+        FROM GENRE
+        WHERE Genre = genre_film
+    )
+    AND Date_Seance = :NEW.Date_Seance
+    AND EXTRACT(HOUR FROM Heure_Début) BETWEEN 18 AND 21;
+
+    IF total_seances_prime > 0 THEN
+        proportion_genre := (seances_genre_prime + 1) / total_seances_prime;
+        IF proportion_genre > 0.5 THEN
+            RAISE_APPLICATION_ERROR(-20013, 'Les films d’un même genre ne peuvent pas représenter plus de 50 % des séances en prime time sur une journée donnée.');
+        END IF;
+    END IF;
+END;
+/
+
+-- Vérification de la proportion de séances pour un film populaire
+CREATE OR REPLACE TRIGGER trg_verifier_limite_seances_film_populaire
+BEFORE INSERT OR UPDATE ON SEANCE
+FOR EACH ROW
+DECLARE
+    total_seances INT;
+    seances_film INT;
+    proportion_film NUMBER(5, 2);
+BEGIN
+    -- Calcul du total des séances programmées dans la semaine
+    SELECT COUNT(*)
+    INTO total_seances
+    FROM SEANCE
+    WHERE Date_Seance BETWEEN TRUNC(:NEW.Date_Seance, 'IW') 
+                          AND TRUNC(:NEW.Date_Seance, 'IW') + 6;
+
+    SELECT COUNT(*)
+    INTO seances_film
+    FROM SEANCE
+    WHERE id_Film = :NEW.id_Film
+      AND Date_Seance BETWEEN TRUNC(:NEW.Date_Seance, 'IW') 
+                          AND TRUNC(:NEW.Date_Seance, 'IW') + 6;
+
+    IF total_seances > 0 THEN
+        proportion_film := (seances_film + 1) / total_seances;
+        IF proportion_film > 0.4 THEN
+            RAISE_APPLICATION_ERROR(-20012, 'Un film populaire ne peut représenter plus de 40 % des séances dans une semaine donnée.');
+        END IF;
+    END IF;
+END;
+/
+
