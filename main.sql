@@ -2537,19 +2537,19 @@ INSERT INTO SEANCE (id_Seance, Date_Seance, Heure_Début, Heure_Fin, Version_Fil
 VALUES (9, '18-12-2024', '18:00:00', '20:40:00', 'VOST', 109, 762509, 4);
 
 INSERT INTO SEANCE (id_Seance, Date_Seance, Heure_Début, Heure_Fin, Version_Film, id_Salle, id_Film, id_Format)
-VALUES (10, '19-12-2024', '20:00:00', '22:40:00', 'VOST', 110, 762509, 5);
+VALUES (10, '19-12-2024', '20:00:00', '22:40:00', 'VOST', 110, 762509, 4);
 
 INSERT INTO SEANCE (id_Seance, Date_Seance, Heure_Début, Heure_Fin, Version_Film, id_Salle, id_Film, id_Format)
 VALUES (11, '28-04-2024', '10:00:00', '12:40:00', 'VF', 101, 762509, 1);
 
 INSERT INTO SEANCE (id_Seance, Date_Seance, Heure_Début, Heure_Fin, Version_Film, id_Salle, id_Film, id_Format)
-VALUES (12, '27-11-2024', '12:30:00', '14:30:00', 'VOST', 102, 1241982, 2);
+VALUES (12, '27-11-2024', '12:30:00', '14:30:00', 'VOST', 102, 1241982, 4);
 
 INSERT INTO SEANCE (id_Seance, Date_Seance, Heure_Début, Heure_Fin, Version_Film, id_Salle, id_Film, id_Format)
-VALUES (13, '30-11-2024', '18:00:00', '20:00:00', 'VOST', 103, 1241982, 3);
+VALUES (13, '30-11-2024', '18:00:00', '20:00:00', 'VOST', 103, 1241982, 1);
 
 INSERT INTO SEANCE (id_Seance, Date_Seance, Heure_Début, Heure_Fin, Version_Film, id_Salle, id_Film, id_Format)
-VALUES (14, '05-12-2024', '18:00:00', '20:00:00', 'VF', 104, 1241982, 4);
+VALUES (14, '05-12-2024', '18:00:00', '20:00:00', 'VF', 104, 1241982, 2);
 
 INSERT INTO SEANCE (id_Seance, Date_Seance, Heure_Début, Heure_Fin, Version_Film, id_Salle, id_Film, id_Format)
 VALUES (15, '21-12-2024', '20:15:00', '22:15:00', 'VF', 105, 1241982, 3);
@@ -2558,55 +2558,59 @@ INSERT INTO SEANCE (id_Seance, Date_Seance, Heure_Début, Heure_Fin, Version_Fil
 VALUES (16, '21-12-2024', '20:30:00', '22:30:00', 'VOST', 105, 1241982, 3);
 
 INSERT INTO SEANCE (id_Seance, Date_Seance, Heure_Début, Heure_Fin, Version_Film, id_Salle, id_Film, id_Format)
-VALUES (17, '18-12-2024', '20:30:00', '23:00:00', 'VF', 101, 539972, 5);
+VALUES (17, '18-12-2024', '20:30:00', '23:00:00', 'VF', 101, 539972, 1);
 
 INSERT INTO SEANCE (id_Seance, Date_Seance, Heure_Début, Heure_Fin, Version_Film, id_Salle, id_Film, id_Format)
-VALUES (18, '20-12-2024', '20:30:00', '23:00:00', 'VOST', 103, 539972, 5);
+VALUES (18, '20-12-2024', '20:30:00', '23:00:00', 'VOST', 103, 539972, 1);
 
 INSERT INTO SEANCE (id_Seance, Date_Seance, Heure_Début, Heure_Fin, Version_Film, id_Salle, id_Film, id_Format)
-VALUES (19, '25-12-2024', '20:30:00', '22:30:00', 'VF', 105, 939243, 5);
+VALUES (19, '25-12-2024', '20:30:00', '22:30:00', 'VF', 105, 939243, 3);
 
 INSERT INTO SEANCE (id_Seance, Date_Seance, Heure_Début, Heure_Fin, Version_Film, id_Salle, id_Film, id_Format)
-VALUES (21, '26-12-2024', '20:30:00', '22:30:00', 'VF', 110, 939243, 5);
+VALUES (21, '26-12-2024', '20:30:00', '22:30:00', 'VF', 110, 939243, 4);
 
 INSERT INTO SEANCE (id_Seance, Date_Seance, Heure_Début, Heure_Fin, Version_Film, id_Salle, id_Film, id_Format)
-VALUES (22, '01-01-2025', '17:15:00', '20:15:00', 'VOST', 108, 939243, 5);
+VALUES (22, '01-01-2025', '17:15:00', '20:15:00', 'VOST', 108, 939243, 1);
 
 INSERT INTO SEANCE (id_Seance, Date_Seance, Heure_Début, Heure_Fin, Version_Film, id_Salle, id_Film, id_Format)
 VALUES (23, '04-01-2025', '18:00:00', '20:00:00', 'VOST', 107, 939243, 5);
 
 INSERT INTO SEANCE (id_Seance, Date_Seance, Heure_Début, Heure_Fin, Version_Film, id_Salle, id_Film, id_Format)
-VALUES (24, '16-10-2024', '20:30:00', '23:00:00', 'VF', 102, 1100782, 5);
+VALUES (24, '16-10-2024', '20:30:00', '23:00:00', 'VF', 102, 1100782, 4);
 
 INSERT INTO SEANCE (id_Seance, Date_Seance, Heure_Début, Heure_Fin, Version_Film, id_Salle, id_Film, id_Format)
-VALUES (25, '20-10-2024', '20:30:00', '23:00:00', 'VOST', 109, 1100782, 5);
+VALUES (25, '20-10-2024', '20:30:00', '23:00:00', 'VOST', 109, 1100782, 1);
 
 INSERT INTO SEANCE (id_Seance, Date_Seance, Heure_Début, Heure_Fin, Version_Film, id_Salle, id_Film, id_Format)
-VALUES (26, '30-10-2024', '20:30:00', '22:30:00', 'VF', 103, 912649, 5);
+VALUES (26, '30-10-2024', '20:30:00', '22:30:00', 'VF', 103, 912649, 1);
 
 INSERT INTO SEANCE (id_Seance, Date_Seance, Heure_Début, Heure_Fin, Version_Film, id_Salle, id_Film, id_Format)
-VALUES (27, '11-11-2024', '20:30:00', '22:30:00', 'VOST', 103, 912649, 5);
+VALUES (27, '11-11-2024', '20:30:00', '22:30:00', 'VOST', 103, 912649, 1);
 
 INSERT INTO SEANCE (id_Seance, Date_Seance, Heure_Début, Heure_Fin, Version_Film, id_Salle, id_Film, id_Format)
-VALUES (28, '09-10-2024', '20:30:00', '22:30:00', 'VF', 102, 1184918, 5);
+VALUES (28, '09-10-2024', '20:30:00', '22:30:00', 'VF', 102, 1184918, 4);
 
 INSERT INTO SEANCE (id_Seance, Date_Seance, Heure_Début, Heure_Fin, Version_Film, id_Salle, id_Film, id_Format)
-VALUES (29, '11-10-2024', '17:30:00', '20:30:00', 'VF', 104, 1184918, 5);
+VALUES (29, '11-10-2024', '17:30:00', '20:30:00', 'VF', 104, 1184918, 2);
 
 INSERT INTO SEANCE (id_Seance, Date_Seance, Heure_Début, Heure_Fin, Version_Film, id_Salle, id_Film, id_Format)
 VALUES (30, '23-10-2024', '19:30:00', '21:30:00', 'VOST', 107, 698687, 5);
 
 INSERT INTO SEANCE (id_Seance, Date_Seance, Heure_Début, Heure_Fin, Version_Film, id_Salle, id_Film, id_Format)
-VALUES (31, '02-10-2024', '19:30:00', '22:10:00', 'VOST', 107, 889737, 5);
+VALUES (31, '02-10-2024', '19:30:00', '22:10:00', 'VOST', 101, 889737, 1);
 
 INSERT INTO SEANCE (id_Seance, Date_Seance, Heure_Début, Heure_Fin, Version_Film, id_Salle, id_Film, id_Format)
-VALUES (32, '23-10-2024', '19:30:00', '22:20:00', 'VOST', 107, 889737, 5);
+VALUES (32, '23-10-2024', '19:30:00', '22:20:00', 'VOST', 101, 889737, 1);
 
 INSERT INTO SEANCE (id_Seance, Date_Seance, Heure_Début, Heure_Fin, Version_Film, id_Salle, id_Film, id_Format)
-VALUES (33, '31-10-2024', '19:30:00', '21:30:00', 'VOST', 107, 1208808, 5);
+VALUES (33, '31-10-2024', '19:30:00', '21:30:00', 'VOST', 108, 1208808, 1);
 
 INSERT INTO SEANCE (id_Seance, Date_Seance, Heure_Début, Heure_Fin, Version_Film, id_Salle, id_Film, id_Format)
-VALUES (34, '09-11-2024', '19:30:00', '21:30:00', 'VOST', 107, 1208808, 5);
+VALUES (34, '09-11-2024', '19:30:00', '21:30:00', 'VOST', 109, 1208808, 1);
 
 INSERT INTO SEANCE (id_Seance, Date_Seance, Heure_Début, Heure_Fin, Version_Film, id_Salle, id_Film, id_Format)
-VALUES (35, '25-11-2024', '19:30:00', '21:10:00', 'VOST', 107, 1299652, 5);
+VALUES (35, '25-11-2024', '19:30:00', '21:10:00', 'VOST', 110, 1299652, 4);
+
+
+
+
