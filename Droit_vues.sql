@@ -1,1 +1,93 @@
 
+-------------------------------------------------------- VUE DU CAISSIER --------------------------------------------------------
+-- Vue des séances disponibles
+CREATE OR REPLACE VIEW Vue_Seances_Disponibles AS
+SELECT 
+    s.id_Seance,
+    f.Titre AS Film,
+    s.Date_Seance,
+    s.Heure_Début,
+    s.Heure_Fin,
+    sa.numero_Salle AS Salle,
+    fm.Nom_Format AS Format,
+    s.Version_Film AS Version
+FROM SEANCE s
+JOIN FILM f ON s.id_Film = f.id_Film
+JOIN SALLE sa ON s.id_Salle = sa.id_Salle
+JOIN FORMAT fm ON s.id_Format = fm.id_Format
+WHERE s.Date_Seance >= TRUNC(SYSDATE) -- Inclut les séances à venir
+ORDER BY s.Date_Seance, s.Heure_Début;
+
+
+-- Vue des Sièges disponibles
+CREATE OR REPLACE VIEW Vue_Disponibilite_Sieges AS
+SELECT 
+    s.id_Seance,
+    sa.numero_Salle AS Salle,
+    sg.numero_Siege AS Siege,
+    sg.Zone,
+    CASE 
+        WHEN b.id_Billet IS NULL THEN 'Disponible'
+        ELSE 'Réservé'
+    END AS Etat_Siege
+FROM SEANCE s
+JOIN SALLE sa ON s.id_Salle = sa.id_Salle
+JOIN SIEGE sg ON sa.id_Salle = sg.id_Salle
+LEFT JOIN BILLET b ON s.id_Seance = b.id_Seance AND sg.id_Siege = b.id_Siege
+WHERE s.Date_Seance >= TRUNC(SYSDATE) -- Inclut uniquement les séances futures ou en cours
+ORDER BY s.id_Seance, sg.Zone, sg.numero_Siege;
+
+
+-- Vue des Tarifs des Billets
+CREATE OR REPLACE VIEW Vue_Tarifs_Billets AS
+SELECT 
+    b.id_Billet,
+    f.Titre AS Film,
+    s.Date_Seance,
+    s.Heure_Début,
+    sg.Zone AS Zone_Siege,
+    b.Catégorie AS Categorie_Billet,
+    fm.Nom_Format AS Format_Projection,
+    10.0 AS Prix_Base, -- Prix de base
+    CASE b.Catégorie
+        WHEN '-12' THEN 0.5
+        WHEN 'Etudiant' THEN 0.8
+        WHEN 'Normal' THEN 1.0
+        ELSE NULL
+    END AS Coefficient_Categorie,
+    CASE sg.Zone
+        WHEN 'VIP' THEN 1.2
+        ELSE 1.0
+    END AS Coefficient_Zone,
+    CASE fm.Nom_Format
+        WHEN '4DX' THEN 2.5
+        WHEN 'IMAX' THEN 2.0
+        WHEN 'Dolby Atmos' THEN 1.75
+        WHEN '3D' THEN 1.5
+        ELSE 1.0
+    END AS Coefficient_Format,
+    -- Calcul final du prix
+    10.0 * 
+    CASE b.Catégorie
+        WHEN '-12' THEN 0.5
+        WHEN 'Etudiant' THEN 0.8
+        WHEN 'Normal' THEN 1.0
+        ELSE NULL
+    END *
+    CASE sg.Zone
+        WHEN 'VIP' THEN 1.2
+        ELSE 1.0
+    END *
+    CASE fm.Nom_Format
+        WHEN '4DX' THEN 2.5
+        WHEN 'IMAX' THEN 2.0
+        WHEN 'Dolby Atmos' THEN 1.75
+        WHEN '3D' THEN 1.5
+        ELSE 1.0
+    END AS Tarif_Final
+FROM BILLET b
+JOIN SIEGE sg ON b.id_Siege = sg.id_Siege
+JOIN SEANCE s ON b.id_Seance = s.id_Seance
+JOIN FORMAT fm ON s.id_Format = fm.id_Format
+JOIN FILM f ON s.id_Film = f.id_Film;
+
