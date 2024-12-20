@@ -2508,7 +2508,7 @@ INSERT INTO SIEGE (id_Siege, numero_Siege, Zone, id_Salle) VALUES (1998, 'S178',
 INSERT INTO SIEGE (id_Siege, numero_Siege, Zone, id_Salle) VALUES (1999, 'S179', 'Standard', 110);
 INSERT INTO SIEGE (id_Siege, numero_Siege, Zone, id_Salle) VALUES (2000, 'S180', 'Standard', 110);
 
--- INSERTION DES SEANCES
+-- INSERTION DES SEANCES //non terminé
 INSERT INTO SEANCE (id_Seance, Date_Seance, Heure_Début, Heure_Fin, Version_Film, id_Salle, id_Film, id_Format)
 VALUES (1, '01-01-2024', '10:00:00', '12:00:00', 'VOST', 101, 762509, 1);
 
