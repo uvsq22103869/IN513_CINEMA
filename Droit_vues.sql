@@ -1,5 +1,20 @@
 -- Listes des vues à tester 
 
+-------------------------------------------------------- VUE DU GESTIONNAIRE ----------------------------------------------------
+
+CREATE OR REPLACE VIEW Vue_Frequentation_Salles AS
+SELECT 
+    sa.id_Salle,
+    sa.numero_Salle,
+    COUNT(b.id_Billet) AS Total_Billets,
+    (SELECT COUNT(*) FROM SIEGE sg WHERE sg.id_Salle = sa.id_Salle) AS Capacite,
+    ROUND((COUNT(b.id_Billet) * 100.0) / 
+          (SELECT COUNT(*) FROM SIEGE sg WHERE sg.id_Salle = sa.id_Salle), 2) AS Taux_Frequentation
+FROM SALLE sa
+LEFT JOIN SEANCE s ON sa.id_Salle = s.id_Salle
+LEFT JOIN BILLET b ON s.id_Seance = b.id_Seance
+GROUP BY sa.id_Salle, sa.numero_Salle;
+
 -------------------------------------------------------- VUE DU PROJECTIONNISTE -------------------------------------------------
 
 CREATE OR REPLACE VIEW Vue_Seances_En_Cours AS
