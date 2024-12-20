@@ -39,3 +39,20 @@ WHERE f.id_Film = fg.id_Film
     AND s.Date_Seance >= ADD_MONTHS(SYSDATE, -2)
 GROUP BY f.Titre
 ORDER BY Revenus_Total DESC;
+
+
+SELECT f.Titre, COUNT(DISTINCT s.Date_Seance) AS Nombre_Jours_Affiche
+FROM FILM f, SEANCE s
+WHERE f.id_Film = s.id_Film
+GROUP BY f.Titre
+HAVING COUNT(DISTINCT s.Date_Seance) > 80
+ORDER BY Nombre_Jours_Affiche DESC;
+
+
+SELECT f.Titre, COUNT(DISTINCT s.id_Format) AS Nombre_Formats
+FROM FILM f, SEANCE s
+WHERE f.id_Film = s.id_Film
+GROUP BY f.Titre
+HAVING COUNT(DISTINCT s.id_Format) > 1
+ORDER BY Nombre_Formats DESC;
+
