@@ -1,6 +1,24 @@
 -- Listes des vues à tester 
 
 -------------------------------------------------------- VUE DU GESTIONNAIRE ----------------------------------------------------
+CREATE OR REPLACE VIEW Vue_Recettes_Films AS
+SELECT 
+    f.id_Film,
+    f.Titre AS Film,
+    s.id_Seance,
+    s.Date_Seance,
+    s.Heure_Début,
+    SUM(b.Prix) AS Recettes_Seance,
+    COUNT(b.id_Billet) AS Nombre_Billets,
+    (SELECT SUM(b2.Prix)
+     FROM SEANCE s2
+     JOIN BILLET b2 ON s2.id_Seance = b2.id_Seance
+     WHERE s2.id_Film = f.id_Film) AS Recettes_Film
+FROM FILM f
+LEFT JOIN SEANCE s ON f.id_Film = s.id_Film
+LEFT JOIN BILLET b ON s.id_Seance = b.id_Seance
+GROUP BY f.id_Film, f.Titre, s.id_Seance, s.Date_Seance, s.Heure_Début
+ORDER BY f.Titre, s.Date_Seance, s.Heure_Début;
 
 CREATE OR REPLACE VIEW Vue_Frequentation_Salles AS
 SELECT 
