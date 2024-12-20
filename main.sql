@@ -3775,3 +3775,61 @@ INSERT INTO FILM_ACTEUR (id_Film, id_Acteur) VALUES (1079091, 88675);
 INSERT INTO FILM_ACTEUR (id_Film, id_Acteur) VALUES (1079091, 213001);
 INSERT INTO FILM_ACTEUR (id_Film, id_Acteur) VALUES (1079091, 1855143);
 INSERT INTO FILM_ACTEUR (id_Film, id_Acteur) VALUES (1079091, 552252);
+
+-- Charger les données dans la table FORMAT
+LOAD DATA
+INFILE 'data.csv'
+APPEND INTO TABLE FORMAT
+FIELDS TERMINATED BY "," OPTIONALLY ENCLOSED BY '"'
+(id_Format, Nom_Format)
+BEGINDATA
+1,"Classique"
+2,"IMAX"
+3,"Dolby Atmos"
+4,"3D"
+5,"4DX"
+
+-- Charger les données dans la table SALLE
+LOAD DATA
+INFILE 'data.csv'
+APPEND INTO TABLE SALLE
+FIELDS TERMINATED BY "," OPTIONALLY ENCLOSED BY '"'
+(id_Salle, Numero_Salle, id_Format)
+BEGINDATA
+101,"Salle 1",1
+102,"Salle 2",4
+103,"Salle 3",1
+104,"Salle IMAX",2
+105,"Salle 5",3
+106,"Salle 6",3
+107,"Salle 4DX",5
+108,"Salle 8",1
+109,"Salle 9",1
+110,"Salle 10",4
+
+-- Charger les données dans la table GENRE
+LOAD DATA
+INFILE 'data.csv'
+APPEND INTO TABLE GENRE
+FIELDS TERMINATED BY "," OPTIONALLY ENCLOSED BY '"'
+(id_Genre, Genre)
+BEGINDATA
+28,"Action"
+12,"Aventure"
+16,"Animation"
+35,"Comédie"
+80,"Crime"
+99,"Documentaire"
+18,"Drame"
+10751,"Familial"
+14,"Fantastique"
+36,"Histoire"
+27,"Horreur"
+10402,"Musique"
+9648,"Mystère"
+10749,"Romance"
+878,"Science-Fiction"
+10770,"Téléfilm"
+53,"Thriller"
+10752,"Guerre"
+37,"Western"
