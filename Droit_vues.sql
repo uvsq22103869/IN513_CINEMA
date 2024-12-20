@@ -1,3 +1,23 @@
+-- Listes des vues à tester 
+
+-------------------------------------------------------- VUE DU CLIENT ----------------------------------------------------------
+CREATE OR REPLACE VIEW Vue_Seances_Futures AS
+SELECT 
+    s.id_Seance,
+    f.Titre AS Film,
+    sa.numero_Salle AS Salle,
+    fm.Nom_Format AS Format,
+    s.Date_Seance,
+    s.Heure_Début,
+    s.Heure_Fin
+FROM SEANCE s
+JOIN FILM f ON s.id_Film = f.id_Film
+JOIN SALLE sa ON s.id_Salle = sa.id_Salle
+JOIN FORMAT fm ON s.id_Format = fm.id_Format
+WHERE s.Date_Seance > TRUNC(SYSDATE) 
+ORDER BY s.Date_Seance, s.Heure_Début;
+
+
 
 -------------------------------------------------------- VUE DU CAISSIER --------------------------------------------------------
 -- Vue des séances disponibles
