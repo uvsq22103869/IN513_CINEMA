@@ -11,11 +11,11 @@ DECLARE
     zone_siege VARCHAR(50);
     nom_format VARCHAR(50);
 BEGIN
-    IF :NEW.Catégorie = 'Enfant' THEN
+    IF :NEW.Catégorie = '-12' THEN
         coefficient_categorie := 0.5;
-    ELSIF :NEW.Catégorie = 'Etudiant' THEN
+    ELSIF :NEW.Catégorie = 'étudiant' THEN
         coefficient_categorie := 0.8;
-    ELSIF :NEW.Catégorie = 'Adulte' THEN
+    ELSIF :NEW.Catégorie = 'normal' THEN
         coefficient_categorie := 1.0;
     ELSE
         RAISE_APPLICATION_ERROR(-20001, 'Catégorie invalide.');
