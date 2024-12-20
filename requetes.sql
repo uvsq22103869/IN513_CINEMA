@@ -29,3 +29,13 @@ WHERE s.id_Seance = b.id_Seance
 GROUP BY TO_CHAR(s.Heure_Début, 'HH24')
 ORDER BY Nombre_Billets DESC;
 
+SELECT f.Titre, SUM(b.Prix) AS Revenus_Total
+FROM FILM f, FILM_GENRE fg, GENRE g, SEANCE s, BILLET b
+WHERE f.id_Film = fg.id_Film 
+    AND fg.id_Genre = g.id_Genre 
+    AND g.Genre = 'Action' 
+    AND s.id_Film = f.id_Film 
+    AND b.id_Seance = s.id_Seance 
+    AND s.Date_Seance >= ADD_MONTHS(SYSDATE, -2)
+GROUP BY f.Titre
+ORDER BY Revenus_Total DESC;
